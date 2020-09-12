@@ -1,0 +1,23 @@
+<div>
+    <form  method="post" [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="imgcontainer">
+          <img src="assets/images/identity theft.png" height="50px" width="50px" alt="Avatar" class="avatar">
+        </div>
+    <label for="userName"><b>Username</b></label>
+    <div>
+        <p *ngIf="isSubmitted && formControls.userName.errors">
+            <span class="error">Please enter your username *</span>
+            
+        </p>
+        <input type="text" placeholder="Username" formControlName="userName" name="userName">
+    </div>
+    <label for="password"><b>Password</b></label>
+    <div>
+        <p *ngIf="isSubmitted && formControls.password.errors">
+            <span class="error"> please enter your password *</span>
+        </p>
+        <input type="password" placeholder="Password" formControlName="password" name="password">
+    </div>
+    <app-login-button></app-login-button>
+    </form>
+</div>
